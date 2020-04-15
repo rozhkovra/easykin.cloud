@@ -3,12 +3,16 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>ru.rrozhkov.easykin</groupId>
-    <artifactId>easykin.cloud</artifactId>
+    <artifactId>easykin-cloud</artifactId>
     <version>${revision}</version>
   </parent>
-  <artifactId>ru.rrozhkov.easykin.zuul</artifactId>
+  <artifactId>easykin-zuul</artifactId>
   <name>easykin-zuul</name>
   <packaging>jar</packaging>
+
+  <properties>
+    <java.version>1.8</java.version>
+  </properties>
 
   <dependencies>
     <dependency>
