@@ -25,6 +25,7 @@
         <module>ru.rrozhkov.easykin.domain</module>
         <module>ru.rrozhkov.easykin.task</module>
     	<module>ru.rrozhkov.easykin.reference</module>
+        <module>ru.rrozhkov.easykin.person</module>
         <module>ru.rrozhkov.easykin.communal</module>
   </modules>
 
