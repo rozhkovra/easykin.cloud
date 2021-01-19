@@ -6,23 +6,23 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ru.rrozhkov.easykin.dao.ModuleRepository;
 import ru.rrozhkov.easykin.entity.ModuleEntity;
+import ru.rrozhkov.easykin.service.ModuleService;
 
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RestController
 @RequestMapping(path = "/module")
 public class ModuleRest {
   @Autowired
-  ModuleRepository moduleRepository;
+  ModuleService moduleService;
 
   @GetMapping(path = "/")
   public Iterable<ModuleEntity> findAll() {
-    return moduleRepository.findAll();
+    return moduleService.modules();
   }
 
   @GetMapping(path = "/{id}")
   public ModuleEntity module(@PathVariable Long id) {
-    return moduleRepository.findById(id).orElse(null);
+    return moduleService.module(id);
   }
 }
