@@ -6,23 +6,23 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ru.rrozhkov.easykin.dao.CategoryRepository;
 import ru.rrozhkov.easykin.entity.CategoryEntity;
+import ru.rrozhkov.easykin.service.CategoryService;
 
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RestController
 @RequestMapping(path = "/category")
 public class CategoryRest {
   @Autowired
-  CategoryRepository categoryRepository;
+  CategoryService categoryService;
 
   @GetMapping(path = "/")
   public Iterable<CategoryEntity> findAll() {
-    return categoryRepository.findAll();
+    return categoryService.categories();
   }
 
   @GetMapping(path = "/{id}")
   public CategoryEntity category(@PathVariable Long id) {
-    return categoryRepository.findById(id).orElse(null);
+    return categoryService.category(id);
   }
 }
