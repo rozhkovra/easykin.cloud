@@ -27,6 +27,7 @@
     	<module>ru.rrozhkov.easykin.reference</module>
         <module>ru.rrozhkov.easykin.person</module>
         <module>ru.rrozhkov.easykin.payment</module>
+        <module>ru.rrozhkov.easykin.communal</module>
   </modules>
 
     <dependencies>
