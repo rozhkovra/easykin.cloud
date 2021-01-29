@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface MeasureRepository extends CrudRepository<MeasureEntity, Long>, JpaSpecificationExecutor<MeasureEntity> {
   Iterable<MeasureEntity> findByReadingId(Long readingId);
+  Iterable<MeasureEntity> findByReadingIdAndMeasureType(Long readingId, String measureType);
 }
